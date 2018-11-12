@@ -6,7 +6,7 @@ cd gcp-sdk
 # to build customized image (workdir set)
 docker build -t gcp-sdk:latest .
 # to create a volume with your credential
-docker run -ti --name gcloud-config google/cloud-sdk gcloud auth login
+docker run -ti --name gcloud-config google/cloud-sdk gcloud auth application-default login
 
 # add alias to use gcloud in your shell. it requies to NOT have a previously installed version of gcloud on your system
 echo "alias gcloud='docker run --rm -ti --volumes-from gcloud-config gcp-sdk -v $PWD /root/workdir gcloud \$@'" >> ~/.bashrc
