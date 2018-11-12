@@ -9,7 +9,7 @@ docker build -t gcp-sdk:latest .
 docker run -ti --name gcloud-config google/cloud-sdk gcloud auth application-default login
 
 # add alias to use gcloud in your shell. it requies to NOT have a previously installed version of gcloud on your system
-echo "alias gcloud='docker run --rm -ti --volumes-from gcloud-config gcp-sdk -v $PWD /root/workdir gcloud \$@'" >> ~/.bashrc
+echo "alias gcloud='docker run --rm -ti -v \$PWD:/root/workdir --volumes-from gcloud-config gcp-sdk gcloud \$@'" >> ~/.bashrc
 
 source ~/.bashrc
 ```
