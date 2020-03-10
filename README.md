@@ -1,7 +1,7 @@
 # Run GCP tools with docker container
 ## Install
 ```bash
-git clone https://github.com/foxpowa/gcp-sdk.git
+git clone https://github.com/tomraulet/gcp-sdk.git
 cd gcp-sdk
 # to build customized image (workdir set)
 docker build -t gcp-sdk:latest .
